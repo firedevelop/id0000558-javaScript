@@ -5,15 +5,15 @@ let maxLife = 100;
 let monsterCurrentHealth = maxLife;
 let playerCurrentHealth = maxLife;
 
+const monsterHealthPercent = document.getElementById('monsterHealthPercentId');
+const playerHealthPercent = document.getElementById('playerHealthPercentId');
 const monsterHealthProgress = document.getElementById('monsterHealthProgressId');
 const playerHealthProgress = document.getElementById('playerHealthProgressId');
 const playerButtonAttack = document.getElementById('playerButtonAttackId');
 const playerButtonAttackStrong = document.getElementById('playerButtonAttackStrongId');
-const monsterHealthPercent = document.getElementById('monsterHealthPercentId');
-const playerHealthPercent = document.getElementById('playerHealthPercentId');
 
-adjustHealthBars(maxLife);
-function adjustHealthBars (maxLife) {
+adjustHealthProgress(maxLife);
+function adjustHealthProgress (maxLife) {
   monsterHealthProgress.max = maxLife;
   monsterHealthProgress.value = maxLife;
   playerHealthProgress.max = maxLife;
