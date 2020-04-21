@@ -13,8 +13,8 @@ const playerButtonAttack = document.getElementById('playerButtonAttackId');
 const playerButtonAttackStrong = document.getElementById('playerButtonAttackStrongId');
 
 
-adjustHealthBars(maxLife);
-function adjustHealthBars (maxLife) {
+adjustHealth(maxLife);
+function adjustHealth (maxLife) {
   monsterHealthProgress.max = maxLife;
   monsterHealthProgress.value = maxLife;
   playerHealthProgress.max = maxLife;
@@ -46,14 +46,14 @@ function playerAttackMode(mode) {
   const playerDamage = playerDeal(monsterAttackValue);
 
   function monsterDeal (damage) {
-    const damageDeal = (Math.round(Math.random() * damage)*100)/100;
+    const damageDeal = Math.round(Math.random() * damage);
     monsterHealthProgress.value = monsterHealthProgress.value - damageDeal;
     monsterHealthPercent.textContent=monsterHealthProgress.value;
     return damageDeal;
   }
   
   function playerDeal (damage) {
-    const damageDeal = (Math.round(Math.random() * damage)*100)/100;
+    const damageDeal = Math.round(Math.random() * damage);
     playerHealthProgress.value = playerHealthProgress.value - damageDeal;
     playerHealthPercent.textContent=playerHealthProgress.value;
     return damageDeal;

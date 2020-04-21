@@ -12,14 +12,15 @@ const playerHealthProgress = document.getElementById('playerHealthProgressId');
 const playerButtonAttack = document.getElementById('playerButtonAttackId');
 const playerButtonAttackStrong = document.getElementById('playerButtonAttackStrongId');
 
-adjustHealthProgress(maxLife);
-function adjustHealthProgress (maxLife) {
+
+adjustHealth(maxLife);
+function adjustHealth (maxLife) {
   monsterHealthProgress.max = maxLife;
   monsterHealthProgress.value = maxLife;
   playerHealthProgress.max = maxLife;
   playerHealthProgress.value = maxLife;
-  h.value = maxLife;
-  h.value = maxLife;
+  monsterHealthPercent.textContent = maxLife;
+  playerHealthPercent.textContent = maxLife;
 }
 
 playerButtonAttack.addEventListener('click', playerAttackHandler);
@@ -45,16 +46,16 @@ function playerAttackMode(mode) {
   const playerDamage = playerDeal(monsterAttackValue);
 
   function monsterDeal (damage) {
-    const damageDeal = (Math.round(Math.random() * damage)*100)/100;
+    const damageDeal = Math.round(Math.random() * damage);
     monsterHealthProgress.value = monsterHealthProgress.value - damageDeal;
-    h.textContent=monsterHealthProgress.value;
+    monsterHealthPercent.textContent=monsterHealthProgress.value;
     return damageDeal;
   }
   
   function playerDeal (damage) {
-    const damageDeal = (Math.round(Math.random() * damage)*100)/100;
+    const damageDeal = Math.round(Math.random() * damage);
     playerHealthProgress.value = playerHealthProgress.value - damageDeal;
-    h.textContent=playerHealthProgress.value;
+    playerHealthPercent.textContent=playerHealthProgress.value;
     return damageDeal;
   }
 
@@ -70,4 +71,3 @@ function playerAttackMode(mode) {
     alert('You have a draw!');
   }
 }
-
