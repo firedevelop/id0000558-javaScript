@@ -1,7 +1,6 @@
 const playerAttackValue = 10;
 const playerAttackStrongValue = 17;
 const monsterAttackValue = 14;
-let hi;
 let maxLife = 100;
 let monsterCurrentHealth = maxLife;
 let playerCurrentHealth = maxLife;
